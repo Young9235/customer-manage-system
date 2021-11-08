@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# 고객 관리 시스템 개발 앱(React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## nodejs 설치
+- https://nodejs.org/ko/ 최신버전 다운로드
 
-## Available Scripts
+## reactjs 문서 참조
+- https://ko.reactjs.org/
+- https://create-react-app.dev/
 
-In the project directory, you can run:
+### my-app이라는 폴더 안에 리액트 프로젝트 생성 -> 프로젝트 시작
+```
+npx create-react-app my-app 
+cd my-app
+npm start
+```
 
-### `yarn start`
+## git 명령어
+```
+git remote add origin https://github.com/Young9235/customer-manage-system.git
+git branch -M main
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+git push -u origin main
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## react에서 많이 쓰이는 UI
+### Material UI (웹 디자인 프레임워크)
+- document : https://mui.com/getting-started/usage/
+- material 버전 확인(현재 소스코드는 v5로 사용)
+```
+v4 npm install @material-ui/core 
+v5 npm install @mui/material @emotion/react @emotion/styled
+```
 
-### `yarn test`
+## yarn 설치
+- npm 명령어 보다 가벼움
+```
+npm install --global yarn
+yarn --version
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Express 서버 모듈 추가
+- nodemon body-parser express 설치
+$ npm install nodemon body-parser express
+nodemon : 소스코드가 바뀔 때마다 자동으로 노드를 재실행주는 패키지
 
-### `yarn build`
+- 서버와 클라이언트 동시에 실행 시키기
+$ npm install concurrently --save
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- yarn 사용하지 않고 실행하기
+dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+$ npm run dev
