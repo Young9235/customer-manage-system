@@ -32,7 +32,9 @@ const data = [
 ]
 
 router.get("/customer", (req, res) => {
-    res.send(data);
+    res.send({
+        data : data
+    });
 });
 
 module.exports = router;

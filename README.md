@@ -31,6 +31,12 @@ v4 npm install @material-ui/core
 v5 npm install @mui/material @emotion/react @emotion/styled
 ```
 
+## npm 설치 패키지 보기
+- 현재 설치된 패키지
+$ npm list --depth=0
+- 글로벌로 설치된 패키지
+$ npm list --depth=0 -g
+
 ## yarn 설치
 - npm 명령어 보다 가벼움
 ```
@@ -39,13 +45,28 @@ yarn --version
 ```
 
 ## Express 서버 모듈 추가
-- nodemon body-parser express 설치
-$ npm install nodemon body-parser express
-nodemon : 소스코드가 바뀔 때마다 자동으로 노드를 재실행주는 패키지
+### 설치
 
+- yarn 명령어
+```
+yarn add express
+- 개발시 변경사항을 실시간으로 업데이트 해주기 위함이며 --dev는 개발환경에서만 적용하기 위한 모듈
+yarn add nodemon --dev  
+- 리액트서버와 노드서버를 동시에 실행 시키기위한 모듈
+yarn add concurrently  
+- package.json 파일 설정후, 실행
+yarn start
+- yarn 설정 확인
+yarn config list  
+```
+
+- npm 명령어
+```
+$ npm install nodemon body-parser express  
 - 서버와 클라이언트 동시에 실행 시키기
 $ npm install concurrently --save
+```
 
 - yarn 사용하지 않고 실행하기
-dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
-$ npm run dev
+"start" : "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+$ npm run start
