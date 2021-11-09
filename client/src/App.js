@@ -23,36 +23,6 @@ const styles = {
   }
 };
 
-const customers = [
-{
-  'id' : 1,
-  'image' : 'http://placeimg.com/80/80/any',
-  'name' : '홍길동',
-  'birthday' : '19930503',
-  'age' : '29',
-  'gender' : '남자',
-  'jop' : '직장인'
-}, 
-{
-  'id' : 2,
-  'image' : 'http://placeimg.com/80/80/a2',
-  'name' : '홍길자',
-  'birthday' : '19980610',
-  'age' : '24',
-  'gender' : '여자',
-  'jop' : '학생'
-},
-{
-  'id' : 3,
-  'image' : 'http://placeimg.com/80/80/3',
-  'name' : '홍길구',
-  'birthday' : '19890812',
-  'age' : '32',
-  'gender' : '남자',
-  'jop' : '프로그래머'
-}
-]
-
 class App extends Component {
 
   state = {
@@ -61,15 +31,16 @@ class App extends Component {
 
   // Component API는 생명주기가 존재 - 모든 컴포넌트가 마운트가 완료되었을 때 실행되는 함수(완료 된 데이터를 받아온다)
   componentDidMount() {
-    this.callApi();
+    this.callApi()
+    .then(err => err ? console.log(err) : null);
   }
 
   callApi = async () => {
     const response = await axios.get("/api/customer");
-    let data = response.data.data;
-    /* console.log(JSON.stringify(data)); */
+    let resData = response.data.data;
+    /* console.log(JSON.stringify(resData)); */
     this.setState({
-      customers : data
+      customers : resData
     });
   }
 

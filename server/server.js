@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const dataList = require("./Router/dataList");
+const router = express.Router();
 
 app.use("/api", dataList);
 
