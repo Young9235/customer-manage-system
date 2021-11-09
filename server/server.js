@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
-const test = require("./Router/test");
-const router = express.Router();
+const dataList = require("./Router/dataList");
 
-app.use("/api", test);
+app.use("/api", dataList);
 
 const port = 5000;   // 노드서버가 사용할 포트번호
 app.listen(port, () => console.log(`listening port ${port}`));
