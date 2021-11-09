@@ -75,6 +75,10 @@ $ "dev" : "concurrently --kill-others-on-fail \"npm run server\" \"npm run clien
 $ npm run dev
 ```
 
+## proxy 설정
+- client쪽에 proxy설정을 하여 서버 5000번 포트를 바라보게 한다.
+- proxy 설정으로 package.json 파일에 추가하는 방법 실패로, setupProxy.js에서 설정해주었음
+
 ## axios 사용
 - 서버와의 비동기 통신
 - REST API : JSON, HTTP와 같은 형식으로 전송된다.
